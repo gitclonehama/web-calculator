@@ -52,6 +52,9 @@ buttons.forEach(button => {
         operator = '';
         resetDisplay();
         break;
+      case 'CE':
+        resetDisplay();
+        break;
       case '+':
         num1 = display.value;
         operator = '+';
