@@ -52,7 +52,7 @@ buttons.forEach(button => {
         operator = '';
         resetDisplay();
         break;
-      case 'CE':
+      case 'DE':
         resetDisplay();
         break;
       case '+':
