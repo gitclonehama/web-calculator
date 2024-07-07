@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: rgb(0, 158, 0);
+}
+
 .container {
   width: 100%;
   height: 100vh;
