@@ -10,11 +10,18 @@ function multiply(a, b) {
 function divide(a, b) {
   return a / b;
 }
-function resetDisplay() {
+function clearDisplay() {
   display.value = '';
 }
 function displayResult(result) {
   display.value = result;
+}
+function resetVariables() {
+  num1 = '';
+  num2 = '';
+  operator = '';
+  prevNum = '';
+  result = 0;
 }
 
 function operate(operator, a, b) {
@@ -26,8 +33,9 @@ function operate(operator, a, b) {
     case '*':
       return multiply(a, b);
     case '/':
-      if (b === 0) {
-        return 'Error';
+      if (b == 0) {
+        alert('Division by 0!');
+        return 'error';
       }else{
         return divide(a, b);
       }
@@ -46,34 +54,31 @@ buttons.forEach(button => {
   button.addEventListener('click', function() {
     switch (button.value) {
       case 'AC':
-        result = 0;
-        num1 = '';
-        num2 = '';
-        operator = '';
-        resetDisplay();
+        resetVariables();
+        clearDisplay();
         break;
       case 'DE':
-        resetDisplay();
+        clearDisplay();
         break;
       case '+':
         num1 = display.value;
         operator = '+';
-        resetDisplay();
+        clearDisplay();
         break;
       case '-':
         num1 = display.value;
         operator = '-';
-        resetDisplay();
+        clearDisplay();
         break;
       case '*':
         num1 = display.value;
         operator = '*';
-        resetDisplay();
+        clearDisplay();
         break;
       case '/':
         num1 = display.value;
         operator = '/';
-        resetDisplay();
+        clearDisplay();
         break;
       case '=':
         if (prevNum === '') {
@@ -82,9 +87,14 @@ buttons.forEach(button => {
           num2 = prevNum;
         }
         result = operate(operator, parseFloat(num1), parseFloat(num2));
-        displayResult(result);
-        num1 = result
-        prevNum = num2;
+        if (result != 'error') {
+          displayResult(result);
+          num1 = result
+          prevNum = num2;
+        }else {
+          resetVariables();
+          clearDisplay();
+        }
         break;
       default:
         display.value += button.value;
