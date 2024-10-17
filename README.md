@@ -2,7 +2,7 @@
 Ever since my freshman year I always thought building a calculator would be a fun challange (and something I could expand to be a specific calculator such as a physics calculator) so in this repository, I will build a calculator using HTML, CSS and Java Script while following the general outline set by The Odin Project.
 
 ## Live Demo:
-Link: [Hama's Calculator](https://hamacodes.github.io/web-calculator/)
+Link: [Hama's Super Awesome Calculator](https://hamacodes.github.io/web-calculator/)
 
 ## What I Learned:
 - State logic and how important thinking about code structure is before starting a project
